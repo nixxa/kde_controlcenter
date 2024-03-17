@@ -1,20 +1,17 @@
-> :warning: Due to upcoming exams, this project will not be maintained for a few months.
-<hr>
-
 <p align="center">
-  <img src="https://github.com/Prayag2/kde_controlcentre/blob/main/assets/logo.jpg" width=100/>
-  <h1 align="center">Control Centre for KDE</h1>
-  <p align="center">A simple control centre widget for KDE Plasma inspired by MacOS!</center>
+  <img src="https://github.com/boraerciyas/kde_controlcentre/blob/main/assets/logo.jpg" width=100/>
+  <h1 align="center">Control Centre for KDE Plasma 6</h1>
+  <p align="center">A simple control centre widget for KDE Plasma 6 inspired by MacOS!</center>
 </p>
 
 <p align="center">
-<a href="https://github.com/prayag2/kde_controlcentre/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/prayag2/kde_controlcentre?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/prayag2/kde_controlcentre/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/prayag2/kde_controlcentre?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/prayag2/kde_controlcentre/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/prayag2/kde_controlcentre?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/boraerciyas/kde_controlcentre/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/boraerciyas/kde_controlcentre?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/boraerciyas/kde_controlcentre/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/boraerciyas/kde_controlcentre?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/boraerciyas/kde_controlcentre/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/boraerciyas/kde_controlcentre?color=%233DAEE9&style=for-the-badge"></a>
 </p>
 
 <p align="center">
-  <img src="https://github.com/Prayag2/kde_controlcentre/blob/main/assets/ss.png"/>
+  <img src="https://github.com/boraerciyas/kde_controlcentre/blob/main/assets/ss.png"/>
 </p>
 
 ## Dependencies
@@ -33,7 +30,7 @@
 
 #### From this repository (Not Stable!)
 1. Clone this repository  
-```git clone https://github.com/prayag2/kde_controlcentre && cd kde_controlcentre/```
+```git clone https://github.com/boraerciyas/kde_controlcentre && cd kde_controlcentre/```
 2. Install using the script  
 ```kpackagetool5 -i package```
 
@@ -55,10 +52,3 @@ Please make sure to use [conventional commits](https://www.conventionalcommits.o
 <a href = "https://github.com/Prayag2/kde_controlcentre/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=Prayag2/kde_controlcentre"/>
 </a>
-
-## Support Me ♥
-If you liked this project, then please consider supporting me!
-<br>
-<a href="https://liberapay.com/Prayag/donate"><img alt="Donate using Liberapay" src="https://img.shields.io/badge/LIBERAPAY-%231A171B?style=for-the-badge&logo=liberapay"/></a>
-<a href="https://ko-fi.com/O5O1FJ70D"><img alt="Buy Me A Coffee" src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%234D798C?style=for-the-badge&logo=ko-fi"/></a>
-<a href="https://coindrop.to/prayagjain"><img alt="Done using PayPal" src="https://img.shields.io/badge/PayPal-%23F2BA37?style=for-the-badge&logo=paypal"/></a>
