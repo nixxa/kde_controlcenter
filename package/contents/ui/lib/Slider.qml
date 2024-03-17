@@ -71,7 +71,7 @@ Card {
             PlasmaComponents.ToolButton {
                 id: iconButton
                 visible: sliderComp.useIconButton
-                icon.source: sliderComp.source
+                icon.name: sliderComp.source
                 Layout.preferredHeight: root.largeFontSize*2
                 Layout.preferredWidth: Layout.preferredHeight
                 onClicked: sliderComp.clicked()

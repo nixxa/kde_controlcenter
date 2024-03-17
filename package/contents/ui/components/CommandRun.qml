@@ -1,8 +1,8 @@
-import QtQml 2.0
-import QtQuick 2.0
-import QtQuick.Layouts 1.15
+import QtQml
+import QtQuick
+import QtQuick.Layouts
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.kirigami as Kirigami
 

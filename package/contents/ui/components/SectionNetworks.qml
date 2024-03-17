@@ -60,7 +60,7 @@ Lib.Card {
 
                     PlasmaComponents3.ToolButton {
                         Layout.preferredHeight: root.largeFontSize * 2.5
-                        icon.source: "arrow-left"
+                        icon.name: "arrow-left"
                         onClicked: {
                             sectionNetworks.toggleNetworkSection();
                         }

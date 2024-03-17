@@ -7,6 +7,7 @@ import org.kde.bluezqt 1.0 as BluezQt
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.config // KAuthorized
 import org.kde.kcmutils // KCMLauncher
+import org.kde.kirigami as Kirigami
 
 import "../lib" as Lib
 import "../js/funcs.js" as Funcs
