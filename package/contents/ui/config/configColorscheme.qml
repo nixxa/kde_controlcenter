@@ -23,7 +23,6 @@ Item {
 
         onNewData:  {
             var colors = data["stdout"].split("\n")
-            // console.log(colors)
             for (var i = 0; i < colors.length; i++) { // parse command output
                 colors[i] = colors[i].substring(3).split(" ")[0]
                 colorsListReady(colors)
