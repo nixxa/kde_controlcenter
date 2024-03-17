@@ -1,10 +1,10 @@
 import QtQuick 2.0
 import QtQml 2.0
 import QtQuick.Layouts 1.15
-import QtGraphicalEffects 1.15
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.ksvg as KSvg
 
 Rectangle {
     color: "transparent"
@@ -13,7 +13,7 @@ Rectangle {
     default property alias content: dataContainer.data
 
 
-    PlasmaCore.FrameSvgItem {
+    KSvg.FrameSvgItem {
         id: rect
 
         imagePath: root.enableTransparency ? "translucent/dialogs/background" : "opaque/dialogs/background"

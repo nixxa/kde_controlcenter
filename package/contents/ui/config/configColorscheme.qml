@@ -1,15 +1,16 @@
-import QtQml 2.0
-import QtQuick 2.0
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import QtQml
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.plasma5support as Plasma5Support
 
 Item {
     property alias cfg_lightTheme: labelA.text // labels to store previous choices (ComboBox doesn't like to do it by itself)
     property alias cfg_darkTheme: labelB.text // labels to store previous choices (ComboBox doesn't like to do it by itself)
     
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: executable
         engine: "executable"
         connectedSources: []
@@ -20,15 +21,15 @@ Item {
             connectSource(cmd)
         }
 
-        onNewData: {
+        onNewData:  {
             var colors = data["stdout"].split("\n")
-            console.log(colors)
-            for (var i = 0; i < colors.length; i++) // parse command output
+            // console.log(colors)
+            for (var i = 0; i < colors.length; i++) { // parse command output
                 colors[i] = colors[i].substring(3).split(" ")[0]
                 colorsListReady(colors)
                 disconnectSource(sourceName) // cmd finished
+            }
         }
-
     }
 
     // Copies of the last saved ComboBox entries.
@@ -56,7 +57,7 @@ Item {
 
     Connections {
         target: executable
-        onColorsListReady: {
+        onColorsListReady: (colors) => {
             cBoxA.model = colors
             cBoxB.model = colors
             // look for color in list

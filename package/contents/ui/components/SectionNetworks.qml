@@ -1,10 +1,14 @@
-import QtQuick 2.5
+import QtQuick 2.0
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.15
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+// import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.plasma.networkmanagement as PlasmaNM
+import org.kde.ksvg as KSvg
+import org.kde.kirigami as Kirigami
+
+
 import "../lib" as Lib
 
 Lib.Card {
@@ -54,15 +58,15 @@ Lib.Card {
                 RowLayout {
                     height: implicitHeight + root.smallSpacing
 
-                    PlasmaComponents.ToolButton {
+                    PlasmaComponents3.ToolButton {
                         Layout.preferredHeight: root.largeFontSize * 2.5
-                        iconSource: "arrow-left"
+                        icon.source: "arrow-left"
                         onClicked: {
                             sectionNetworks.toggleNetworkSection();
                         }
                     }
 
-                    PlasmaComponents.Label {
+                    PlasmaComponents3.Label {
                         text: i18n("Network Connections")
                         font.pixelSize: root.largeFontSize * 1.2
                         Layout.fillWidth: true
@@ -96,7 +100,7 @@ Lib.Card {
                             Timer {
                                 id: timer
 
-                                interval: PlasmaCore.Units.humanMoment
+                                interval: Kirigami.Units.humanMoment
                             }
 
                             Connections {
@@ -135,7 +139,7 @@ Lib.Card {
 
                 }
 
-                PlasmaCore.SvgItem {
+                KSvg.SvgItem {
                     id: separatorLine
 
                     z: 4
@@ -143,7 +147,7 @@ Lib.Card {
                     Layout.fillWidth: true
                     Layout.preferredHeight: root.scale
 
-                    svg: PlasmaCore.Svg {
+                    svg: KSvg.Svg {
                         imagePath: "widgets/line"
                     }
 

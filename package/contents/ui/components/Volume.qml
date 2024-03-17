@@ -1,9 +1,16 @@
 import QtQml 2.0
-import QtQuick 2.0
+import QtQuick
 import QtQuick.Layouts 1.15
 
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.private.volume 0.1 as Vol
+import org.kde.plasma.components 3.0 as PC3
+import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.plasmoid 2.0
+
+import org.kde.kcmutils // KCMLauncher
+import org.kde.config // KAuthorized
+
+import org.kde.plasma.private.volume 0.1
 
 import "../lib" as Lib
 import "../js/funcs.js" as Funcs
@@ -16,19 +23,28 @@ Lib.Slider {
     title: i18n("Volume")
     
     // Volume Feedback
-    Vol.VolumeFeedback {
+    VolumeFeedback {
         id: feedback
+    }
+
+    GlobalConfig {
+        id: config
     }
     
     // Audio source
     property var sink: paSinkModel.preferredSink
     readonly property bool sinkAvailable: sink && !(sink && sink.name == "auto_null")
-    readonly property Vol.SinkModel paSinkModel: Vol.SinkModel {
+    property bool volumeFeedback: config.audioFeedback
+    property bool globalMute: config.globalMute
+    property int currentMaxVolumePercent: config.raiseMaximumVolume ? 150 : 100
+    property int currentMaxVolumeValue: currentMaxVolumePercent * PulseAudio.NormalVolume / 100.00
+    property int volumePercentStep: config.volumeStep
+    readonly property SinkModel paSinkModel: SinkModel {
         id: paSinkModel
     }
     
-    value: Math.round(sink.volume / Vol.PulseAudio.NormalVolume * 100)
-    secondaryTitle: Math.round(sink.volume / Vol.PulseAudio.NormalVolume * 100) + "%"
+    value: Math.round(sink.volume / PulseAudio.NormalVolume * 100)
+    secondaryTitle: Math.round(sink.volume / PulseAudio.NormalVolume * 100) + "%"
     
     // Changes icon based on the current volume percentage
     source: Funcs.volIconName(sink.volume, sink.muted)
@@ -40,10 +56,10 @@ Lib.Slider {
     }
     // Update volume
     onMoved: {
-        sink.volume = value * Vol.PulseAudio.NormalVolume / 100
+        sink.volume = value * PulseAudio.NormalVolume / 100
     }
     
-    property var oldVol: 100 * Vol.PulseAudio.NormalVolume / 100
+    property var oldVol: 100 * PulseAudio.NormalVolume / 100
     onClicked: {
         if(value!=0){
             oldVol = sink.volume

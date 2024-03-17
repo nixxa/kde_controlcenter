@@ -1,8 +1,11 @@
-import QtQml 2.0
-import QtQuick 2.0
-import QtQuick.Layouts 1.15
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQml
+import QtQuick
+import QtQuick.Layouts
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.plasma5support as Plasma5Support
+
+
 import "../lib" as Lib
 import "../js/brightness.js" as BrightnessJS
 
@@ -32,16 +35,16 @@ Lib.Slider {
     property bool disableBrightnessUpdate: true
 
     // Power Management Data Source
-    property QtObject pmSource: PlasmaCore.DataSource {
+    property QtObject pmSource: Plasma5Support.DataSource {
         id: pmSource
         engine: "powermanagement"
         connectedSources: sources
  
-        onSourceAdded: {
+        onSourceAdded: source => {
             disconnectSource(source);
             connectSource(source);
         }
-        onSourceRemoved: {
+        onSourceRemoved: source => {
             disconnectSource(source);
         }
         onDataChanged: {

@@ -1,10 +1,11 @@
-import QtQml 2.0
-import QtQuick 2.0
-import QtQuick.Layouts 1.15
-import QtGraphicalEffects 1.0
+import QtQml
+import QtQuick
+import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
 
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.plasmoid
+import org.kde.plasma.core as PlasmaCore
+import org.kde.kirigami as Kirigami
 
 Item {
     id: compactRep
@@ -12,7 +13,7 @@ Item {
     RowLayout {
         anchors.fill: parent
         
-        PlasmaCore.IconItem {
+        Kirigami.Icon {
             Layout.fillWidth: true
             Layout.fillHeight: true
             source: root.mainIconName
@@ -20,8 +21,11 @@ Item {
             
             MouseArea {
                 anchors.fill: parent
-                onClicked: {
-                    plasmoid.expanded = !plasmoid.expanded
+                onPressed: mouse => {
+                    if (mouse.button != Qt.LeftButton)
+                        return;
+
+                    root.expanded = !root.expanded
                 }
             }
         }
