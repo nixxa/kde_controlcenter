@@ -2,16 +2,16 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "yberciyas@gmail.com",
-                "Name": "Yunus Bora Erciyas"
+                "Email": "igor.goida@gmail.com",
+                "Name": "Igor Goyda"
             }
         ],
         "Category": "Utilities",
-        "Description": "A control centre inspired by MacOS!",
-        "Icon": "configure-toolbars",
-        "Id": "com.github.boraerciyas.controlcentre",
+        "Description": "A control center",
+        "Icon": "control-center",
+        "Id": "com.github.nixxa.controlcenter",
         "License": "GPLv3",
-        "Name": "Control Centre",
+        "Name": "Control Center",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

@@ -5,6 +5,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 // import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.networkmanagement as PlasmaNM
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.ksvg as KSvg
 import org.kde.kirigami as Kirigami
 
@@ -51,11 +52,11 @@ Lib.Card {
                 height: root.buttonHeight
             }
 
-            header: ColumnLayout {
+            header: PlasmaExtras.PlasmoidHeading {
                 width: parent.width
                 spacing: root.smallSpacing
 
-                RowLayout {
+                contentItem: RowLayout {
                     height: implicitHeight + root.smallSpacing
 
                     PlasmaComponents3.ToolButton {
@@ -67,12 +68,12 @@ Lib.Card {
                     }
 
                     PlasmaComponents3.Label {
-                        text: i18n("Network Connections")
+                        text: i18n("Networks")
                         font.pixelSize: root.largeFontSize * 1.2
                         Layout.fillWidth: true
                     }
 
-                    PlasmaComponents3.CheckBox {
+                    PlasmaComponents3.Switch {
                         id: wifiSwitchButton
 
                         readonly property bool administrativelyEnabled: network.availableDevices.wirelessDeviceAvailable && network.enabledConnections.wirelessHwEnabled
@@ -118,7 +119,7 @@ Lib.Card {
                     }
 
                     // Airplane mode section
-                    PlasmaComponents3.CheckBox {
+                    PlasmaComponents3.Switch {
                         id: airPlaneModeSwitchButton
 
                         property bool initialized: false

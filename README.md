@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://github.com/boraerciyas/kde_controlcentre/blob/main/assets/logo.jpg" width=100/>
-  <h1 align="center">Control Centre for KDE Plasma 6</h1>
-  <p align="center">A simple control centre widget for KDE Plasma 6 inspired by MacOS!</center>
+  <h1 align="center">Control Center for KDE Plasma 6</h1>
+  <p align="center">A simple control center widget for KDE Plasma 6 inspired by MacOS!</center>
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@
 </p>
 
 ## Dependencies
-- KDE Plasma 5.22 and above
+- KDE Plasma 6.0.4 and above
 - Packages: `plasma-nm`, `kdeplasma-addons`, `plasma-pa`
 - KDE Connect
 
@@ -32,7 +32,7 @@
 1. Clone this repository  
 ```git clone https://github.com/boraerciyas/kde_controlcentre && cd kde_controlcentre/```
 2. Install using the script  
-```kpackagetool5 -i package```
+```kpackagetool6 -i package```
 
 ## Usage
 1. Right click on the desktop.
