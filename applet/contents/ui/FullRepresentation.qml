@@ -1,11 +1,9 @@
-import QtQml
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents
 
 import "lib" as Lib
@@ -17,7 +15,7 @@ Item {
     id: fullRep
     
     // PROPERTIES
-    Layout.preferredWidth: root.fullRepWidth
+    Layout.preferredWidth: mainWindow.fullRepWidth
     Layout.preferredHeight: wrapper.implicitHeight
     Layout.minimumWidth: Layout.preferredWidth
     Layout.maximumWidth: Layout.preferredWidth
@@ -42,8 +40,8 @@ Item {
 
             spacing: 0
             Layout.fillWidth: true
-            Layout.preferredHeight: root.sectionHeight
-            Layout.maximumHeight: root.sectionHeight
+            Layout.preferredHeight: mainWindow.sectionHeight
+            Layout.maximumHeight: mainWindow.sectionHeight
             
             // Network, Bluetooth and Settings Button
             Components.SectionButtons{}
@@ -55,20 +53,6 @@ Item {
                 Components.DndButton{}
                 RowLayout {
                     spacing: 0
-                    
-                    // Two blocks for custom commands
-                    Components.CommandRun{
-                        visible: root.showCmd1
-                        title: root.cmdTitle1
-                        icon: root.cmdIcon1
-                        command: root.cmdRun1
-                    }
-                    Components.CommandRun{
-                        visible: root.showCmd2
-                        title: root.cmdTitle2
-                        icon: root.cmdIcon2
-                        command: root.cmdRun2
-                    }
                     
                     // Other blocks
                     Components.KDEConnect{}

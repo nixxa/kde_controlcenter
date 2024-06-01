@@ -14,11 +14,11 @@ Lib.Slider {
     id: brightnessControl
     
     // Should be visible ONLY if the monitor supports it
-    visible: isBrightnessAvailable && root.showBrightness
+    visible: isBrightnessAvailable && mainWindow.showBrightness
     
     // Dimensions
     Layout.fillWidth: true
-    Layout.preferredHeight: root.sectionHeight/2
+    Layout.preferredHeight: mainWindow.sectionHeight/2
     
     // Slider properties
     title: "Display Brightness"

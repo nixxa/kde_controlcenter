@@ -17,7 +17,7 @@ import "../js/funcs.js" as Funcs
 
 Lib.CardButton {
     // NIGHT COLOUR CONTROL
-    visible: root.showNightColor
+    visible: mainWindow.showNightColor
     property var monitor: monitor
     property var inhibitor: inhibitor
     /* Redshift.Monitor {

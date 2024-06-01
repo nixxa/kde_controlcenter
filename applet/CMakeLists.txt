@@ -1,0 +1,1 @@
+plasma_install_package(. com.github.nixxa.controlcenter)

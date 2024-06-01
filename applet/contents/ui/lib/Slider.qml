@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.15
 import org.kde.plasma.core 2.0 as PlasmaCore
-// import org.kde.plasma.components 2.0 as PlasmaComponents2
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.kirigami as Kirigami
 
@@ -23,31 +22,31 @@ Card {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: root.largeSpacing
+        anchors.margins: mainWindow.largeSpacing
         clip: true
 
         RowLayout {
             Layout.fillHeight: true
             Layout.fillWidth: true
-            spacing: root.smallSpacing
+            spacing: mainWindow.smallSpacing
 
             PlasmaComponents.Label {
                 id: title
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignLeft
-                font.pixelSize: root.largeFontSize
+                font.pixelSize: mainWindow.largeFontSize
                 font.weight: Font.Bold
                 font.capitalization: Font.Capitalize
             }
 
             PlasmaComponents.Label {
                 id: secondaryTitle
-                visible: root.showPercentage
+                visible: mainWindow.showPercentage
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignRight
-                font.pixelSize: root.largeFontSize
+                font.pixelSize: mainWindow.largeFontSize
                 font.weight: Font.Bold
                 font.capitalization: Font.Capitalize
                 horizontalAlignment: Text.AlignRight
@@ -58,13 +57,13 @@ Card {
         RowLayout {
             Layout.fillHeight: true
             Layout.fillWidth: true
-            spacing: root.smallSpacing
+            spacing: mainWindow.smallSpacing
 
             Kirigami.Icon {
                 id: icon
                 source: sliderComp.source
                 visible: !sliderComp.useIconButton
-                Layout.preferredHeight: root.largeFontSize*2
+                Layout.preferredHeight: mainWindow.largeFontSize*2
                 Layout.preferredWidth: Layout.preferredHeight
             }
             
@@ -72,7 +71,7 @@ Card {
                 id: iconButton
                 visible: sliderComp.useIconButton
                 icon.name: sliderComp.source
-                Layout.preferredHeight: root.largeFontSize*2
+                Layout.preferredHeight: mainWindow.largeFontSize*2
                 Layout.preferredWidth: Layout.preferredHeight
                 onClicked: sliderComp.clicked()
             }

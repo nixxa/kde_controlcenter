@@ -16,7 +16,7 @@ Lib.CardButton {
     
     id: colorSchemeSwitcher
     
-    visible: root.showColorSwitcher
+    visible: mainWindow.showColorSwitcher
     Layout.fillHeight: true
     Layout.fillWidth: true
     title: i18n(Plasmoid.configuration.isDarkTheme ? "Dark Theme" : "Light Theme")

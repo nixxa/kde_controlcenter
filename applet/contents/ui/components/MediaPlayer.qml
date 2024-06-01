@@ -11,9 +11,9 @@ import "../lib" as Lib
 
 Lib.Card {
     id: mediaPlayer
-    visible: root.showMediaPlayer
+    visible: mainWindow.showMediaPlayer
     Layout.fillWidth: true
-    Layout.preferredHeight: root.sectionHeight / 2
+    Layout.preferredHeight: mainWindow.sectionHeight / 2
     
     /* Plasma5Support.DataSource {
         id: musicSource
@@ -106,7 +106,7 @@ Lib.Card {
 
     RowLayout {
         anchors.fill: parent
-        anchors.margins: root.largeSpacing
+        anchors.margins: mainWindow.largeSpacing
 
         Image {
             id: audioThumb
@@ -120,7 +120,7 @@ Lib.Card {
         }
         ColumnLayout {
             id: mediaNameWrapper
-            Layout.margins: root.smallSpacing
+            Layout.margins: mainWindow.smallSpacing
             Layout.fillHeight: true
             spacing: 0
 
@@ -129,7 +129,7 @@ Lib.Card {
                 Layout.fillWidth: true
                 font.capitalization: Font.Capitalize
                 font.weight: Font.Bold
-                font.pixelSize: root.largeFontSize
+                font.pixelSize: mainWindow.largeFontSize
                 horizontalAlignment: mpris2Model ? Qt.AlignLeft : Text.AlignHCenter
                 elide: Text.ElideRight
                 text: {
@@ -139,7 +139,7 @@ Lib.Card {
             PlasmaComponents.Label {
                 id: audioArtist
                 Layout.fillWidth: true
-                font.pixelSize: root.mediumFontSize
+                font.pixelSize: mainWindow.mediumFontSize
                 // visible: isPlaying
                 text: {
                      try {

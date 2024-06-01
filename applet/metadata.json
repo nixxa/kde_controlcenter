@@ -4,10 +4,18 @@
             {
                 "Email": "igor.goida@gmail.com",
                 "Name": "Igor Goyda"
+            },
+            {
+                "Email": "yberciyas@gmail.com",
+                "Name": "Yunus Bora Erciyas"
+            },
+            {
+                "Email": "prayagjain2@gmail.com",
+                "Name": "Prayag Jain"
             }
         ],
         "Category": "Utilities",
-        "Description": "A control center",
+        "Description": "A Plasma 6 control center",
         "Icon": "control-center",
         "Id": "com.github.nixxa.controlcenter",
         "License": "GPLv3",

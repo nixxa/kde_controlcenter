@@ -1,14 +1,14 @@
 import QtQml
 import QtQuick
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
-
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 
 Item {
     id: compactRep
+
+    required property string iconName
     
     RowLayout {
         anchors.fill: parent
@@ -16,7 +16,7 @@ Item {
         Kirigami.Icon {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            source: root.mainIconName
+            source: compactRep.conName
             smooth: true
             
             MouseArea {
@@ -25,7 +25,7 @@ Item {
                     if (mouse.button != Qt.LeftButton)
                         return;
 
-                    root.expanded = !root.expanded
+                    mainWindow.expanded = !mainWindow.expanded
                 }
             }
         }

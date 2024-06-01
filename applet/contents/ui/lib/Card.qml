@@ -16,13 +16,13 @@ Rectangle {
     KSvg.FrameSvgItem {
         id: rect
 
-        imagePath: root.enableTransparency ? "translucent/dialogs/background" : "opaque/dialogs/background"
+        imagePath: mainWindow.enableTransparency ? "translucent/dialogs/background" : "opaque/dialogs/background"
         clip: true
         anchors.fill: parent
-        anchors.topMargin: rect.margins.top * root.scale
-        anchors.leftMargin: rect.margins.left * root.scale
-        anchors.rightMargin: rect.margins.right * root.scale
-        anchors.bottomMargin: rect.margins.bottom * root.scale
+        anchors.topMargin: rect.margins.top * mainWindow.scale
+        anchors.leftMargin: rect.margins.left * mainWindow.scale
+        anchors.rightMargin: rect.margins.right * mainWindow.scale
+        anchors.bottomMargin: rect.margins.bottom * mainWindow.scale
 
         Item {
             id: dataContainer

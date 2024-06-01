@@ -18,7 +18,7 @@ Item
         Kirigami.Icon {
             id: icon
             anchors.fill: parent
-            anchors.margins: root.smallSpacing
+            anchors.margins: mainWindow.smallSpacing
             anchors.centerIn: parent
         }
     }

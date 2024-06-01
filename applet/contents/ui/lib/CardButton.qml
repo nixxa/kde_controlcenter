@@ -12,16 +12,16 @@ Card {
 
     GridLayout {
         anchors.fill: parent
-        property bool small: width < root.fullRepWidth/4
-        anchors.margins: small ? root.smallSpacing : root.largeSpacing
+        property bool small: width < mainWindow.fullRepWidth/4
+        anchors.margins: small ? mainWindow.smallSpacing : mainWindow.largeSpacing
         rows: small ? 2 : 1
         columns: small ? 1 : 2
-        columnSpacing: small ? 0 : 10*root.scale
-        rowSpacing: small ? 0 : 10*root.scale
+        columnSpacing: small ? 0 : 10*mainWindow.scale
+        rowSpacing: small ? 0 : 10*mainWindow.scale
 
         Item {
             id: icon
-            Layout.preferredHeight: parent.small ? parent.height/1.6-root.smallSpacing: parent.height - root.largeSpacing
+            Layout.preferredHeight: parent.small ? parent.height/1.6-mainWindow.smallSpacing: parent.height - mainWindow.largeSpacing
             Layout.preferredWidth: Layout.preferredHeight
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
         }
@@ -29,8 +29,8 @@ Card {
             id: title
             Layout.fillHeight: true
             Layout.fillWidth: true
-            Layout.margins: root.smallSpacing
-            font.pixelSize: parent.small ? root.mediumFontSize : root.largeFontSize
+            Layout.margins: mainWindow.smallSpacing
+            font.pixelSize: parent.small ? mainWindow.mediumFontSize : mainWindow.largeFontSize
             font.weight: parent.small ? Font.Normal : Font.Bold
             horizontalAlignment: parent.small ? Qt.AlignHCenter : Qt.AlignLeft
             verticalAlignment: Qt.AlignVCenter

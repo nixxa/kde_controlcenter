@@ -17,8 +17,8 @@ import "../js/funcs.js" as Funcs
 
 Lib.Slider {
     Layout.fillWidth: true
-    Layout.preferredHeight: root.sectionHeight/2
-    visible: sinkAvailable && root.showVolume
+    Layout.preferredHeight: mainWindow.sectionHeight/2
+    visible: sinkAvailable && mainWindow.showVolume
     useIconButton: true
     title: i18n("Volume")
     
@@ -50,7 +50,7 @@ Lib.Slider {
     source: Funcs.volIconName(sink.volume, sink.muted)
     
     onValueChanged: {
-        if(root.playVolumeFeedback) {
+        if(mainWindow.playVolumeFeedback) {
             feedback.play(sink.index)
         }
     }

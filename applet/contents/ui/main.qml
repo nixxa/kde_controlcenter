@@ -2,13 +2,11 @@ import QtQuick
 import QtQuick.Controls
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
-import org.kde.plasma.plasma5support as Plasma5Support
 
 
 PlasmoidItem {
-    id: root
+    id: mainWindow
     
     clip: true
 
@@ -45,25 +43,19 @@ PlasmoidItem {
     property bool showVolume: Plasmoid.configuration.showVolume
     property bool showBrightness: Plasmoid.configuration.showBrightness
     property bool showMediaPlayer: Plasmoid.configuration.showMediaPlayer
-    property bool showCmd1: Plasmoid.configuration.showCmd1
-    property bool showCmd2: Plasmoid.configuration.showCmd2
     property bool showPercentage: Plasmoid.configuration.showPercentage
     
-    property string cmdRun1: Plasmoid.configuration.cmdRun1
-    property string cmdTitle1: Plasmoid.configuration.cmdTitle1
-    property string cmdIcon1: Plasmoid.configuration.cmdIcon1
-    property string cmdRun2: Plasmoid.configuration.cmdRun2
-    property string cmdTitle2: Plasmoid.configuration.cmdTitle2
-    property string cmdIcon2: Plasmoid.configuration.cmdIcon2
-
-    readonly property bool inPanel: (root.location === PlasmaCore.Types.TopEdge
-        || root.location === PlasmaCore.Types.RightEdge
-        || root.location === PlasmaCore.Types.BottomEdge
-        || root.location === PlasmaCore.Types.LeftEdge)
+    readonly property bool inPanel: (mainWindow.location === PlasmaCore.Types.TopEdge
+        || mainWindow.location === PlasmaCore.Types.RightEdge
+        || mainWindow.location === PlasmaCore.Types.BottomEdge
+        || mainWindow.location === PlasmaCore.Types.LeftEdge)
 
     switchHeight: fullRepHeight
     switchWidth: fullRepWidth
-    preferredRepresentation: inPanel ? Plasmoid.compactRepresentation : Plasmoid.fullRepresentation
+    
     fullRepresentation: FullRepresentation {}
-    compactRepresentation: CompactRepresentation {}
+    compactRepresentation: CompactRepresentation {
+        iconName: mainWindow.mainIconName
+    }
+    preferredRepresentation: mainWindow.inPanel ? mainWindow.compactRepresentation : mainWindow.fullRepresentation
 }

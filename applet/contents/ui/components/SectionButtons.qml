@@ -30,8 +30,8 @@ Lib.Card {
     ColumnLayout {
         id: buttonsColumn
         anchors.fill: parent
-        anchors.bottomMargin: root.smallSpacing
-        anchors.topMargin: root.smallSpacing
+        anchors.bottomMargin: mainWindow.smallSpacing
+        anchors.topMargin: mainWindow.smallSpacing
         spacing: 0
         
         Lib.LongButton {

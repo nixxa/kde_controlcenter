@@ -38,7 +38,7 @@ Lib.Card {
 
     Item {
         anchors.fill: parent
-        anchors.margins: root.smallSpacing
+        anchors.margins: mainWindow.smallSpacing
 
         ListView {
             anchors.fill: parent
@@ -49,18 +49,18 @@ Lib.Card {
 
             delegate: ConnectionItem {
                 width: parent.width
-                height: root.buttonHeight
+                height: mainWindow.buttonHeight
             }
 
             header: PlasmaExtras.PlasmoidHeading {
                 width: parent.width
-                spacing: root.smallSpacing
+                spacing: mainWindow.smallSpacing
 
                 contentItem: RowLayout {
-                    height: implicitHeight + root.smallSpacing
+                    height: implicitHeight + mainWindow.smallSpacing
 
                     PlasmaComponents3.ToolButton {
-                        Layout.preferredHeight: root.largeFontSize * 2.5
+                        Layout.preferredHeight: mainWindow.largeFontSize * 2.5
                         icon.name: "arrow-left"
                         onClicked: {
                             sectionNetworks.toggleNetworkSection();
@@ -69,7 +69,7 @@ Lib.Card {
 
                     PlasmaComponents3.Label {
                         text: i18n("Networks")
-                        font.pixelSize: root.largeFontSize * 1.2
+                        font.pixelSize: mainWindow.largeFontSize * 1.2
                         Layout.fillWidth: true
                     }
 
@@ -78,7 +78,7 @@ Lib.Card {
 
                         readonly property bool administrativelyEnabled: network.availableDevices.wirelessDeviceAvailable && network.enabledConnections.wirelessHwEnabled
 
-                        Layout.rightMargin: root.smallSpacing
+                        Layout.rightMargin: mainWindow.smallSpacing
                         checked: administrativelyEnabled && network.enabledConnections.wirelessEnabled
                         enabled: administrativelyEnabled
                         icon.name: administrativelyEnabled && network.enabledConnections.wirelessEnabled ? "network-wireless-on" : "network-wireless-off"
@@ -146,7 +146,7 @@ Lib.Card {
                     z: 4
                     elementId: "horizontal-line"
                     Layout.fillWidth: true
-                    Layout.preferredHeight: root.scale
+                    Layout.preferredHeight: mainWindow.scale
 
                     svg: KSvg.Svg {
                         imagePath: "widgets/line"
