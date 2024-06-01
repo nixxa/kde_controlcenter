@@ -3,14 +3,17 @@ import QtQuick.Controls
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
+import QtQuick.Layouts 1.1
 
 
 PlasmoidItem {
     id: mainWindow
     
-    clip: true
+    //clip: true
 
     // PROPERTIES
+    property var config: Plasmoid.configuration
+
     property bool enableTransparency: Plasmoid.configuration.transparency
     property var animationDuration: Kirigami.Units.veryShortDuration
     property bool playVolumeFeedback: Plasmoid.configuration.playVolumeFeedback
@@ -18,7 +21,9 @@ PlasmoidItem {
     property var scale: Plasmoid.configuration.scale * 0.01
     property int fullRepWidth: 360 * scale
     property int fullRepHeight: 360 * scale
-    property int sectionHeight: 180 * scale
+    
+    property int sectionWidth: 360 * scale
+    property int sectionHeight: 90 * scale
 
     property int largeSpacing: 12 * scale
     property int mediumSpacing: 8 * scale
@@ -27,8 +32,8 @@ PlasmoidItem {
     property int buttonMargin: 4 * scale
     property int buttonHeight: 48 * scale
 
-    property int largeFontSize: 15 * scale
-    property int mediumFontSize: 12 * scale
+    property int largeFontSize: 14 * scale
+    property int mediumFontSize: 11 * scale
     property int smallFontSize: 7 * scale
     
     // Main Icon
@@ -45,17 +50,27 @@ PlasmoidItem {
     property bool showMediaPlayer: Plasmoid.configuration.showMediaPlayer
     property bool showPercentage: Plasmoid.configuration.showPercentage
     
-    readonly property bool inPanel: (mainWindow.location === PlasmaCore.Types.TopEdge
-        || mainWindow.location === PlasmaCore.Types.RightEdge
-        || mainWindow.location === PlasmaCore.Types.BottomEdge
-        || mainWindow.location === PlasmaCore.Types.LeftEdge)
+    readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
+        || Plasmoid.location === PlasmaCore.Types.RightEdge
+        || Plasmoid.location === PlasmaCore.Types.BottomEdge
+        || Plasmoid.location === PlasmaCore.Types.LeftEdge)
 
-    switchHeight: fullRepHeight
-    switchWidth: fullRepWidth
-    
-    fullRepresentation: FullRepresentation {}
+    Plasmoid.icon: mainWindow.mainIconName
+    switchWidth: Kirigami.Units.gridUnit * 10
+    switchHeight: Kirigami.Units.gridUnit * 10
+
+    fullRepresentation: FullRepresentation {
+        anchors.fill: parent
+        Layout.minimumWidth: mainWindow.sectionWidth
+        Layout.minimumHeight: mainWindow.sectionHeight
+        Layout.preferredWidth: mainWindow.sectionWidth
+        Layout.preferredHeight: (mainWindow.sectionHeight + mainWindow.mediumSpacing) * 2
+            + (mainWindow.showVolume ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)
+            + (mainWindow.showBrightness ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)
+            + (mainWindow.showMediaPlayer ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)
+    }
     compactRepresentation: CompactRepresentation {
-        iconName: mainWindow.mainIconName
+        iconName: Plasmoid.icon
     }
     preferredRepresentation: mainWindow.inPanel ? mainWindow.compactRepresentation : mainWindow.fullRepresentation
 }

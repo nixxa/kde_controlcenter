@@ -17,7 +17,7 @@ import "../js/funcs.js" as Funcs
 
 Lib.Slider {
     Layout.fillWidth: true
-    Layout.preferredHeight: mainWindow.sectionHeight/2
+    Layout.preferredHeight: mainWindow.sectionHeight
     visible: sinkAvailable && mainWindow.showVolume
     useIconButton: true
     title: i18n("Volume")

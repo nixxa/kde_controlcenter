@@ -30,7 +30,7 @@ KSvg.FrameSvgItem {
         rows: 2; columns: 2
         anchors.fill: parent
         anchors.margins: button.margin
-        rowSpacing: -mainWindow.mediumSpacing
+        rowSpacing: -mainWindow.smallSpacing
         columnSpacing: mainWindow.mediumSpacing
         clip: true
 

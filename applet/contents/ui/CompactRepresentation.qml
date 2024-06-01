@@ -3,9 +3,10 @@ import QtQuick
 import QtQuick.Layouts
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kirigami as Kirigami
 
-Item {
+PlasmaExtras.Representation {
     id: compactRep
 
     required property string iconName

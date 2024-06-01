@@ -56,7 +56,7 @@
             <default>true</default>
         </entry>
         <entry name="showMediaPlayer" type="bool">
-            <default>true</default>
+            <default>false</default>
         </entry>
         <entry name="showPercentage" type="bool">
             <default>true</default>

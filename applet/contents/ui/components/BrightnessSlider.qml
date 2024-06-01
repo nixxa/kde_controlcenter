@@ -18,7 +18,7 @@ Lib.Slider {
     
     // Dimensions
     Layout.fillWidth: true
-    Layout.preferredHeight: mainWindow.sectionHeight/2
+    Layout.preferredHeight: mainWindow.sectionHeight
     
     // Slider properties
     title: "Display Brightness"

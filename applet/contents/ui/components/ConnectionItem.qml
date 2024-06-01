@@ -1,14 +1,10 @@
-import QtQuick 2.0
+import QtQuick
 import "../lib" as Lib
 import org.kde.plasma.networkmanagement as PlasmaNM
 
 Lib.LongButton {
     title: Name
     source: ConnectionIcon
-
-    Network {
-        id: network
-    }
 
     function itemText() {
         if (ConnectionState === PlasmaNM.Enums.Activating) {

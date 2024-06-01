@@ -13,7 +13,7 @@ Lib.Card {
     id: mediaPlayer
     visible: mainWindow.showMediaPlayer
     Layout.fillWidth: true
-    Layout.preferredHeight: mainWindow.sectionHeight / 2
+    Layout.preferredHeight: mainWindow.sectionHeight
     
     /* Plasma5Support.DataSource {
         id: musicSource

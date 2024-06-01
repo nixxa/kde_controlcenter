@@ -1,8 +1,7 @@
-import QtQml 2.0
-import QtQuick 2.0
+import QtQuick
 import QtQuick.Layouts 1.15
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.core as PlasmaCore
 import org.kde.bluezqt 1.0 as BluezQt
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.config // KAuthorized
@@ -14,15 +13,7 @@ import "../js/funcs.js" as Funcs
 
 Lib.Card {
     id: sectionButtons
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-    
-    // NETWORK
-    property var network: network
-    Network {
-        id: network
-    }
-    
+   
     // BLUETOOTH
     property QtObject btManager : BluezQt.Manager
     
