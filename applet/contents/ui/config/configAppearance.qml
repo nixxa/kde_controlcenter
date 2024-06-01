@@ -22,14 +22,8 @@ ColumnLayout {
     property alias cfg_showCmd2: showCmd2.checked
     property alias cfg_showPercentage: showPercentage.checked
     property alias cfg_mainIconName: mainIconName.icon.name
-    property alias cfg_cmdIcon1: cmdIcon1.icon.name
-    property alias cfg_cmdRun1: cmdRun1.text
-    property alias cfg_cmdTitle1: cmdTitle1.text
-    property alias cfg_cmdIcon2: cmdIcon2.icon.name
-    property alias cfg_cmdRun2: cmdRun2.text
-    property alias cfg_cmdTitle2: cmdTitle2.text
 
-    property int numChecked: showKDEConnect.checked + showColorSwitcher.checked + showNightColor.checked + showCmd1.checked + showCmd2.checked
+    property int numChecked: showKDEConnect.checked + showColorSwitcher.checked + showNightColor.checked
     property int maxNum: 2
 
     // Used to select icons
@@ -90,58 +84,6 @@ ColumnLayout {
             id: showColorSwitcher
             text: i18n('Color Scheme Switcher')
             enabled: !checked && numChecked < maxNum || checked
-        }
-        CheckBox {
-            id: showCmd1
-            text: i18n('Custom Command Block 1')
-            enabled: !checked && numChecked < maxNum || checked
-        }
-        Kirigami.FormLayout {
-            visible: showCmd1.checked
-            TextField {
-                id: cmdTitle1
-                Kirigami.FormData.label: i18n("Name:")
-            }
-            TextField {
-                id: cmdRun1
-                Kirigami.FormData.label: i18n("Command:")
-            }
-            Button {
-                id: cmdIcon1
-                Kirigami.FormData.label: i18n("Icon:")
-                icon.width: Kirigami.Units.iconSizes.medium
-                icon.height: icon.width
-                onClicked: {
-                    iconDialog.open()
-                    iconDialog.iconObj= cmdIcon1.icon
-                }
-            }
-        }
-        CheckBox {
-            id: showCmd2
-            text: i18n('Custom Command Block 2')
-            enabled: !checked && numChecked < maxNum || checked
-        }
-        Kirigami.FormLayout {
-            visible: showCmd2.checked
-            TextField {
-                id: cmdTitle2
-                Kirigami.FormData.label: i18n("Name:")
-            }
-            TextField {
-                id: cmdRun2
-                Kirigami.FormData.label: i18n("Command:")
-            }
-            Button {
-                id: cmdIcon2
-                Kirigami.FormData.label: i18n("Icon:")
-                icon.width: Kirigami.Units.iconSizes.medium
-                icon.height: icon.width
-                onClicked: {
-                    iconDialog.open()
-                    iconDialog.iconObj= cmdIcon2.icon
-                }
-            }
         }
         Label {
             text: i18n("You can enable only 2 toggle buttons at a time.")
