@@ -12,7 +12,7 @@ Card {
 
     GridLayout {
         anchors.fill: parent
-        property bool small: width < mainWindow.fullRepWidth/4
+        property bool small: width < mainWindow.sectionWidth
         anchors.margins: small ? mainWindow.smallSpacing : mainWindow.largeSpacing
         rows: small ? 2 : 1
         columns: small ? 1 : 2

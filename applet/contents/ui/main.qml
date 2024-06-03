@@ -22,8 +22,8 @@ PlasmoidItem {
     property int fullRepWidth: 360 * scale
     property int fullRepHeight: 360 * scale
     
-    property int sectionWidth: 360 * scale
-    property int sectionHeight: 90 * scale
+    property int sectionWidth: Plasmoid.configuration.sectionWidth * scale
+    property int sectionHeight: Plasmoid.configuration.sectionHeight * scale
 
     property int largeSpacing: 12 * scale
     property int mediumSpacing: 8 * scale
@@ -61,9 +61,9 @@ PlasmoidItem {
 
     fullRepresentation: FullRepresentation {
         anchors.fill: parent
-        Layout.minimumWidth: mainWindow.sectionWidth
+        Layout.minimumWidth: mainWindow.sectionWidth * 4
         Layout.minimumHeight: mainWindow.sectionHeight
-        Layout.preferredWidth: mainWindow.sectionWidth
+        Layout.preferredWidth: mainWindow.sectionWidth * 4
         Layout.preferredHeight: (mainWindow.sectionHeight + mainWindow.mediumSpacing) * 2
             + (mainWindow.showVolume ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)
             + (mainWindow.showBrightness ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)

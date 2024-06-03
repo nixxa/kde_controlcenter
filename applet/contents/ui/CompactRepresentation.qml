@@ -5,6 +5,7 @@ import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kirigami as Kirigami
+import "components" as Components
 
 PlasmaExtras.Representation {
     id: compactRep
@@ -13,21 +14,21 @@ PlasmaExtras.Representation {
     
     RowLayout {
         anchors.fill: parent
-        
-        Kirigami.Icon {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            source: compactRep.conName
-            smooth: true
-            
-            MouseArea {
-                anchors.fill: parent
-                onPressed: mouse => {
-                    if (mouse.button != Qt.LeftButton)
-                        return;
 
-                    mainWindow.expanded = !mainWindow.expanded
-                }
+        Components.AppletIcon {
+            id: icon
+            anchors.fill: parent
+            source: 'control-center'
+            active: mouseArea.containsMouse
+        }
+        
+        MouseArea {
+            anchors.fill: parent
+            onPressed: mouse => {
+                if (mouse.button != Qt.LeftButton)
+                    return;
+
+                mainWindow.expanded = !mainWindow.expanded
             }
         }
     }

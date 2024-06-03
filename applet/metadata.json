@@ -20,9 +20,6 @@
         "Id": "com.github.nixxa.controlcenter",
         "License": "GPLv3",
         "Name": "Control Center",
-        "ServiceTypes": [
-            "Plasma/Applet"
-        ],
         "Version": "0.1.0"
 
     },

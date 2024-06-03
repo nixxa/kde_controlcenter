@@ -27,7 +27,7 @@ Lib.Card {
         
         Lib.LongButton {
             title: i18n("Network")
-            subtitle: network.networkStatus
+            subtitle: network?.networkStatus ?? "unknown"
             source: network.activeConnectionIcon
             sourceColor: network.networkStatus === "Connected" ? Kirigami.Theme.highlightColor : Kirigami.Theme.disabledTextColor
             onClicked: {

@@ -13,13 +13,13 @@
             <default>False</default>
         </entry>
         <entry name="isDarkTheme" type="bool">
-            <default>false</default>
+            <default>true</default>
         </entry>
         <entry name="mainIconHeight" type="int">
             <default>24</default>
         </entry>
         <entry name="mainIconName" type="string">
-            <default>configure</default>
+            <default>control-center</default>
         </entry>
         <entry name="lightTheme" type="String">
             <label>Light Theme</label>
@@ -28,6 +28,14 @@
         <entry name="darkTheme" type="String">
             <label>Dark Theme</label>
             <default>BreezeDark</default>
+        </entry>
+        <entry name="sectionWidth" type="int">
+            <label>Section width</label>
+            <default>90</default>
+        </entry>
+        <entry name="sectionHeight" type="int">
+            <label>Section height</label>
+            <default>90</default>
         </entry>
         
         <!--    BEHAVIOUR      -->

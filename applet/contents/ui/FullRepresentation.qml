@@ -15,8 +15,6 @@ import "js/funcs.js" as Funcs
 PlasmaExtras.Representation {
     id: fullRep
     
-    // PROPERTIES
-    
     Components.Network {
         id: network
     }
@@ -73,9 +71,6 @@ PlasmaExtras.Representation {
                 }
             }
         }
-        // Item {
-        //     Layout.fillHeight: true
-        // }
         ColumnLayout {
             id: sectionB
 

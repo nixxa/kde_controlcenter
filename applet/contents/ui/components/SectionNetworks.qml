@@ -42,7 +42,7 @@ Lib.Card {
                 height: implicitHeight + mainWindow.smallSpacing
 
                 readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
-                readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
+                readonly property var displayplaneModeMessage: airPlaneModeSwitchButton.checked && airPlaneModeSwitchButton.visible
 
                 PlasmaComponents3.ToolButton {
                     Layout.preferredHeight: mainWindow.largeFontSize * 2.5
@@ -134,7 +134,7 @@ Lib.Card {
                 type: Kirigami.MessageType.Information
                 icon.name: "dialog-password"
                 text: i18n("You need to log in to this network")
-                visible: network.networkStatus.connectivity === NMQt.NetworkManager.Portal
+                visible: network.activeConnectionIcon.connectivity === NMQt.NetworkManager.Portal
 
                 actions: Kirigami.Action {
                     text: i18nc("@action:button", "Log in")
@@ -151,7 +151,21 @@ Lib.Card {
 
                 contentItem: ListView {
                     id: connectionView
+
+                    property int currentVisibleButtonIndex: -1
                     property bool showSeparator: true
+
+                    Keys.onDownPressed: event => {
+                        connectionView.incrementCurrentIndex();
+                        connectionView.currentItem.forceActiveFocus();
+                    }
+                    Keys.onUpPressed: event => {
+                        if (connectionView.currentIndex === 0) {
+                            connectionView.currentIndex = -1;
+                        } else {
+                            event.accepted = false;
+                        }
+                    }
 
                     topMargin: connectivityMessage.visible ? 0 : mainWindow.smallSpacing
                     bottomMargin: mainWindow.smallSpacing
@@ -163,6 +177,11 @@ Lib.Card {
                     section.delegate: ListItem {
                         separator: true
                     }
+                    currentIndex: -1
+
+                    highlight: PlasmaExtras.Highlight { }
+                    highlightMoveDuration: Kirigami.Units.shortDuration
+                    highlightResizeDuration: Kirigami.Units.shortDuration
 
                     model: network.appletProxyModel
                     delegate: ConnectionItem {

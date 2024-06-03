@@ -41,13 +41,12 @@ Lib.CardButton {
         connectedSources: []
 
         onNewData: { 
-            console.log("IsDarkCommand: ", sourceName)
-            var isDark = data["stdout"]
-            console.log("IsDarkResponse: ", isDark)
-            isDarkTheme.checked = isDark.indexOf("Dark") > 0
-            console.log("IsDark: " + isDarkTheme.checked)
-
-            disconnectSource(sourceName)
+            // console.log("IsDarkCommand: ", sourceName)
+            // var isDark = data["stdout"]
+            // console.log("IsDarkResponse: ", isDark)
+            // isDarkTheme.checked = isDark.indexOf("Dark") > 0
+            // console.log("IsDark: " + isDarkTheme.checked)
+            // disconnectSource(sourceName)
         }
         
         function exec(cmd) {
