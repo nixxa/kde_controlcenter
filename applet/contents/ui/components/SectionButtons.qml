@@ -20,12 +20,18 @@ Lib.Card {
     // All Buttons
     ColumnLayout {
         id: buttonsColumn
-        anchors.fill: parent
-        anchors.bottomMargin: mainWindow.smallSpacing
-        anchors.topMargin: mainWindow.smallSpacing
+
         spacing: 0
         
+        anchors.fill: parent
+        anchors.margins: mainWindow.smallSpacing
+        //anchors.bottomMargin: mainWindow.smallSpacing
+        //anchors.topMargin: mainWindow.smallSpacing        
+        
         Lib.LongButton {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
             title: i18n("Network")
             subtitle: network?.networkStatus ?? "unknown"
             source: network.activeConnectionIcon
@@ -36,6 +42,9 @@ Lib.Card {
         }
         
         Lib.LongButton {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
             title: i18n("Bluetooth")
             subtitle: Funcs.getBtDevice()
             source: "network-bluetooth"
@@ -45,6 +54,9 @@ Lib.Card {
         }
         
         Lib.LongButton {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            
             title: i18n("Settings")
             subtitle: i18n("System Settings")
             source: "settings-configure"

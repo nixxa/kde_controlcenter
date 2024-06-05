@@ -12,8 +12,6 @@ PlasmoidItem {
     //clip: true
 
     // PROPERTIES
-    property var config: Plasmoid.configuration
-
     property bool enableTransparency: Plasmoid.configuration.transparency
     property var animationDuration: Kirigami.Units.veryShortDuration
     property bool playVolumeFeedback: Plasmoid.configuration.playVolumeFeedback
@@ -56,6 +54,7 @@ PlasmoidItem {
         || Plasmoid.location === PlasmaCore.Types.LeftEdge)
 
     Plasmoid.icon: mainWindow.mainIconName
+    
     switchWidth: Kirigami.Units.gridUnit * 10
     switchHeight: Kirigami.Units.gridUnit * 10
 
@@ -64,10 +63,10 @@ PlasmoidItem {
         Layout.minimumWidth: mainWindow.sectionWidth * 4
         Layout.minimumHeight: mainWindow.sectionHeight
         Layout.preferredWidth: mainWindow.sectionWidth * 4
-        Layout.preferredHeight: (mainWindow.sectionHeight + mainWindow.mediumSpacing) * 2
-            + (mainWindow.showVolume ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)
-            + (mainWindow.showBrightness ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)
-            + (mainWindow.showMediaPlayer ? mainWindow.sectionHeight + mainWindow.mediumSpacing : 0)
+        Layout.preferredHeight: (mainWindow.sectionHeight + mainWindow.smallSpacing) * 2
+            + (mainWindow.showVolume ? mainWindow.sectionHeight + mainWindow.smallSpacing : 0)
+            + (mainWindow.showBrightness ? mainWindow.sectionHeight + mainWindow.smallSpacing : 0)
+            + (mainWindow.showMediaPlayer ? mainWindow.sectionHeight + mainWindow.smallSpacing : 0)
     }
     compactRepresentation: CompactRepresentation {
         iconName: Plasmoid.icon

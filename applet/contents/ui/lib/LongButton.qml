@@ -13,10 +13,6 @@ KSvg.FrameSvgItem {
 
     imagePath: "widgets/viewitem"
     prefix: mouseArea.containsMouse ? (mouseArea.pressed ? "selected+hover" : "hover") : "normal"
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-    Layout.rightMargin: mainWindow.smallSpacing
-    Layout.leftMargin: mainWindow.smallSpacing
     signal clicked;
 
     property alias title: title.text
@@ -27,17 +23,19 @@ KSvg.FrameSvgItem {
     property int margin: mainWindow.buttonMargin
 
     GridLayout {
-        rows: 2; columns: 2
+        rows: 2
+        columns: 2
         anchors.fill: parent
         anchors.margins: button.margin
-        rowSpacing: -mainWindow.smallSpacing
+        //rowSpacing: -mainWindow.smallSpacing
+        rowSpacing: 0
         columnSpacing: mainWindow.mediumSpacing
-        clip: true
+        //clip: true
 
         Kirigami.Icon {
             id: icon
             Layout.rowSpan: 2
-            Layout.preferredHeight: parent.height - mainWindow.smallSpacing //
+            Layout.preferredHeight: parent.height - mainWindow.smallSpacing
             Layout.preferredWidth: Layout.preferredHeight
         }
 

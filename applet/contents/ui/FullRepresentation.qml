@@ -23,6 +23,8 @@ PlasmaExtras.Representation {
         id: sectionNetworks
     }
 
+    collapseMarginsHint: true
+    
     // Main wrapper
     ColumnLayout {
         id: wrapper
@@ -34,13 +36,12 @@ PlasmaExtras.Representation {
             id: sectionA
 
             spacing: 0
+            Layout.fillWidth: true
             
             // Network, Bluetooth and Settings Button
             Components.SectionButtons {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                Layout.minimumWidth: mainWindow.sectionHeight * 2 
                 Layout.minimumHeight: mainWindow.sectionHeight * 2
-                Layout.maximumHeight: mainWindow.sectionHeight * 2
             }
             
             // Quick Toggle Buttons
@@ -71,6 +72,7 @@ PlasmaExtras.Representation {
                 }
             }
         }
+
         ColumnLayout {
             id: sectionB
 
