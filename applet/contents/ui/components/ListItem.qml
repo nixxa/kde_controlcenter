@@ -22,8 +22,6 @@ MouseArea {
     property bool separator: false
     property rect highlightRect: Qt.rect(0, 0, width, height)
 
-    width: parent.width
-
     // Sections have spacing above but not below. Will use 2 of them below.
     height: separator ? separatorLine.height + Kirigami.Units.smallSpacing * 3 : parent.height
     hoverEnabled: true
