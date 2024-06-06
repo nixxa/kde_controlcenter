@@ -11,9 +11,9 @@
             "program": "plasmoidviewer",
             "args": [
                 "-a",
-                "${workspaceRoot}/applet",
+                "${workspaceRoot}/package",
                 "-s",
-                "800x800"
+                "1000x800"
             ],
             "env": {
                 "QT_FORCE_STDERR_LOGGING": "1"

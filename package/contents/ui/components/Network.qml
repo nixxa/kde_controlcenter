@@ -6,7 +6,7 @@ Item {
     visible: false
 
     property var appletProxyModel: appletProxyModel
-    //property var networkStatus: networkStatus.networkStatus
+    property var networkStatus: networkStatus
     property var activeConnectionIcon: activeConnectionIcon.connectionIcon
     property var enabledConnections: enabledConnections
     property var availableDevices: availableDevices

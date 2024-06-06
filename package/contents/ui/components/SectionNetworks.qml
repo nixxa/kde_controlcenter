@@ -1,15 +1,10 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.networkmanagement as PlasmaNM
 import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.ksvg as KSvg
 import org.kde.kirigami as Kirigami
 import org.kde.networkmanager as NMQt
-import org.kde.coreaddons 1.0 as KCoreAddons
-import org.kde.kcmutils as KCMUtils
 import "../lib" as Lib
 
 
@@ -17,7 +12,6 @@ Lib.Card {
     id: sectionNetworks
 
     anchors.fill: parent
-    //z: 999
     visible: false
 
     function toggleNetworkSection() {
@@ -31,6 +25,7 @@ Lib.Card {
     }
 
     PlasmaExtras.Representation {
+        id: networkPage
         anchors.fill: parent
         anchors.margins: mainWindow.smallSpacing
 
@@ -63,11 +58,11 @@ Lib.Card {
                 id: scrollView
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
                 contentWidth: availableWidth - contentItem.leftMargin - contentItem.rightMargin
 
                 contentItem: ListView {
                     id: connectionView
-                    //anchors.fill: parent
                     focus: true
                     currentIndex: -1
                     clip: true
@@ -101,19 +96,19 @@ Lib.Card {
                         visible: status === Loader.Ready
                         sourceComponent: PlasmaExtras.PlaceholderMessage {
                             iconName: {
-                                if (toolbar.displayplaneModeMessage) {
+                                if (networkPage.header.displayplaneModeMessage) {
                                     return "network-flightmode-on"
                                 }
-                                if (toolbar.displayWifiMessage) {
+                                if (networkPage.header.displayWifiMessage) {
                                     return "network-wireless-off"
                                 }
                                 return "edit-none"
                             }
                             text: {
-                                if (toolbar.displayplaneModeMessage) {
+                                if (networkPage.header.displayplaneModeMessage) {
                                     return i18n("Airplane mode is enabled")
                                 }
-                                if (toolbar.displayWifiMessage) {
+                                if (networkPage.header.displayWifiMessage) {
                                     return i18n("Wireless is deactivated")
                                 }
                                 return i18n("No available connections")

@@ -23,8 +23,6 @@ PlasmaExtras.Representation {
         id: sectionNetworks
     }
 
-    collapseMarginsHint: true
-    
     // Main wrapper
     ColumnLayout {
         id: wrapper

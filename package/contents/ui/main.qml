@@ -61,12 +61,12 @@ PlasmoidItem {
     fullRepresentation: FullRepresentation {
         anchors.fill: parent
         Layout.minimumWidth: mainWindow.sectionWidth * 4
-        Layout.minimumHeight: mainWindow.sectionHeight
+        Layout.minimumHeight: mainWindow.sectionHeight * 2
         Layout.preferredWidth: mainWindow.sectionWidth * 4
         Layout.preferredHeight: (mainWindow.sectionHeight + mainWindow.smallSpacing) * 2
-            + (mainWindow.showVolume ? mainWindow.sectionHeight + mainWindow.smallSpacing : 0)
-            + (mainWindow.showBrightness ? mainWindow.sectionHeight + mainWindow.smallSpacing : 0)
-            + (mainWindow.showMediaPlayer ? mainWindow.sectionHeight + mainWindow.smallSpacing : 0)
+            + (mainWindow.showVolume ? mainWindow.sectionHeight + mainWindow.smallSpacing*2 : 0)
+            + (mainWindow.showBrightness ? mainWindow.sectionHeight + mainWindow.smallSpacing*2 : 0)
+            + (mainWindow.showMediaPlayer ? mainWindow.sectionHeight + mainWindow.smallSpacing*2 : 0)
     }
     compactRepresentation: CompactRepresentation {
         iconName: Plasmoid.icon
